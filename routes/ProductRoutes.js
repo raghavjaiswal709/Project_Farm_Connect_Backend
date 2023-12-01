@@ -20,5 +20,7 @@ router.post("/product-filters",productFilterController)
 
 router.get("/search/:keyword",searchProductController)
 
+router.post("/accepted_products")
+
 
 export default router

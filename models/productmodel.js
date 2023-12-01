@@ -1,66 +1,68 @@
 import mongoose from "mongoose";
 
-const productschema = new mongoose.Schema({
-    category:{
-        type:mongoose.ObjectId,
-        ref:"Category",
-        required:true
+const productschema = new mongoose.Schema(
+  {
+    category: {
+      type: mongoose.ObjectId,
+      ref: "Category",
+      required: true,
     },
 
-    userID:{
-      type:mongoose.Schema.Types.ObjectId,
-      ref:'users',
-    },
-    title:{
-        type:String,
+    userID: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "users",
+      },
+    ],
+
+    title: {
+      type: String,
       //   required:true,
-        trim:true
+      trim: true,
     },
 
-    slug:{
-      type:String,
+    slug: {
+      type: String,
       // required:true
     },
 
-    price:{
-        type:Number,
+    price: {
+      type: Number,
       //   required:true,
-     },
+    },
 
-     quantity:{
-        type:Number,
+    quantity: {
+      type: Number,
       //   required:true,
-     },
-     date:{
-        type:String,
+    },
+    date: {
+      type: String,
       //   required:false
-     },
-     image: {
-        data:Buffer ,
-        contentType:String
+    },
+    image: {
+      data: Buffer,
+      contentType: String,
+    },
 
-     },
-
-     discription: {
-        type:String,
+    discription: {
+      type: String,
       //   required:true
-     },
+    },
 
-     address: {
-        type:String,
+    address: {
+      type: String,
       //   required:true
-     },
-     state: {
-        type:String,
+    },
+    state: {
+      type: String,
       //   required:true
-     },
-     district: {
-        type:String,
+    },
+    district: {
+      type: String,
       //   required:true
-     }
+    },
+  },
+  { timestamps: true }
+);
 
-     
-
-},{timestamps:true})
-
-export default mongoose.model('product',productschema)
+export default mongoose.model("product", productschema);
