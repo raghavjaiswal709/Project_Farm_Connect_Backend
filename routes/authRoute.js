@@ -1,5 +1,8 @@
 import express from "express";
-import { updateProfileController } from "../controllers/authController.js";
+import {
+  getOrdersController,
+  updateProfileController,
+} from "../controllers/authController.js";
 import {
   registerController,
   loginController,
@@ -30,8 +33,10 @@ router.get("/user-auth", requireSignIn, isWholeseller, (req, res) => {
 router.get("/wholeseller-auth", requireSignIn, isFarmer, (req, res) => {
   res.status(200).send({ ok: true });
 });
-router.put("/profile", requireSignIn, updateProfileController, (req, res) => {
+router.put("/profile", updateProfileController, (req, res) => {
   res.status(200).send({ ok: true });
 });
+
+router.get("/orders", requireSignIn, getOrdersController);
 
 export default router;
