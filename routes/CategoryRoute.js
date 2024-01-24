@@ -4,15 +4,15 @@ import { categoryController, createCategoryController, deleteCategoryController,
 
  const router = express.Router()
 
-router.post('/create-category',requireSignIn,  createCategoryController) 
+router.post('/create-category',  createCategoryController) 
 
 
-router.put('/update-category/:id', requireSignIn, isWholeseller,updateCategoryController)
+router.put('/update-category/:id', isWholeseller,updateCategoryController)
 
 router.get('/get-category',categoryController)
 
 router.get('/single-category/:slug',singleCategoryController)
 
-router.delete('/delete-category/:id', requireSignIn, isWholeseller,deleteCategoryController)
+router.delete('/delete-category/:id', isWholeseller,deleteCategoryController)
 
 export default router

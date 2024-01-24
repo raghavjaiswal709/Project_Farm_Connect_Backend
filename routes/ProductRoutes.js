@@ -6,8 +6,8 @@ import braintree from "braintree"
  
 const router = express.Router()
 
-router.post('/create-Product',requireSignIn, formidable(), createProductController)
-router.put('/update-Product/:pid',requireSignIn, isWholeseller, formidable(), updateProductController)
+router.post('/create-Product', formidable(), createProductController)
+router.put('/update-Product/:pid', isWholeseller, formidable(), updateProductController)
 
 router.get('/get-product', getProductController)
 
@@ -17,9 +17,9 @@ router.get("/product-photo/:pid", productPhotoController);
 
 router.delete("/delete-product/:pid", deleteProductController);
 
-router.post("/product-filters",productFilterController)
+router.post("/product-filters", productFilterController)
 
-router.get("/search/:keyword",searchProductController)
+router.get("/search/:keyword", searchProductController)
 
 //payments routes
 //token
