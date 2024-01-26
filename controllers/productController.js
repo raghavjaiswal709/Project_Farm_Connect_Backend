@@ -9,7 +9,7 @@ import braintree  from "braintree";
 
 var gateway = new braintree.BraintreeGateway({
   environment: braintree.Environment.Sandbox,
-  merchantId: "xh46vkzbjc9gtwsy",
+  merchantId: "xh46vkzbjc9gtwsy ",
   publicKey: "q8zsm5yzvpd7r38z",
   privateKey: "825bdfbd4cb2d19d94314c698dbe8822",
 });
