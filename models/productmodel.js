@@ -1,68 +1,61 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const productschema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
     category: {
       type: mongoose.ObjectId,
-      ref: "Category",
+      ref: 'Category',
       required: true,
     },
 
     userID: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users",
+        ref: 'users',
       },
     ],
 
     title: {
       type: String,
-      //   required:true,
       trim: true,
     },
 
     slug: {
       type: String,
-      // required:true
     },
 
     price: {
       type: Number,
-      //   required:true,
     },
 
     quantity: {
       type: Number,
-      //   required:true,
     },
     date: {
       type: String,
-      //   required:false
     },
     image: {
       data: Buffer,
       contentType: String,
     },
 
-    discription: {
+    description: {
       type: String,
-      //   required:true
     },
 
     address: {
       type: String,
-      //   required:true
     },
     state: {
       type: String,
-      //   required:true
     },
     district: {
       type: String,
-      //   required:true
     },
+    // Add a reference to the Bargain model
+    bargains: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Bargain' }],
   },
   { timestamps: true }
 );
 
-export default mongoose.model("product", productschema);
+export default mongoose.model('Product', productSchema);
