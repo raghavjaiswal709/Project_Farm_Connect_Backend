@@ -91,7 +91,8 @@ To run this project, you will need to add the following environment variables to
    - Create a **.env** file in the server directory.
    - Define following environment variables -
 
-   `PORT = 8080`
+`PORT = 8080`
+
 `MONGO_url =` 
 
 `JWT_SECRET = `
@@ -122,6 +123,7 @@ To run this project, you will need to add the following environment variables to
 
 
       For More details checkout 👇
+
       Docs Frontend : https://docs.google.com/document/d/1BGqAR-twFhGoGBUptZIqBUXemS3iCqcudnySke0D3DQ/edit?usp=sharing
 
       Docs Backend : https://docs.google.com/document/d/1PCiXe3jYtLolER0EZZSK-8INDJIQZGVt5DqyO21D09M/edit?usp=sharing
